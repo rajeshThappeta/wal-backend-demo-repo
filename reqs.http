@@ -1,0 +1,19 @@
+GET http://localhost:4000/users
+
+###
+
+POST http://localhost:4000/create-user
+Content-Type: application/json
+
+{
+     "username":"bhanu",
+     "email":"bhanu@mail.com",
+     "age":21
+}
+
+
+###
+PUT http://localhost:4000/modify-user
+
+###
+DELETE http://localhost:4000/delete-user
