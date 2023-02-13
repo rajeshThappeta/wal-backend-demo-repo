@@ -7,50 +7,20 @@ const app = exp();
 //assign port
 app.listen(4000, () => console.log("Server on port 4000..."));
 
-//sample data
-let users = [
-  {
-    username: "kiran",
-    email: "kiran@mail.com",
-    age: 21,
-  },
-];
+//import userApp
+const userApp=require("./routes/users.route")
+//const productApp=require("./APIs/productApi")
 
-//create routes(API)
+//inform to http server to excure userApp when req reached to userApi
+app.use("/user-api",userApp)
+//app.use("/product-api",productApp)
 
-//route for GET req of users
-app.get("/users", (req, res) => {
-  res.send({ message: "Users data", payload: users });
-});
+//handle invalid path
+app.use("*",(req,res,next)=>{
+  res.send({message:"Invalid path"})
+})
 
-//body parser
-app.use(exp.json());
-
-//route for POST req
-app.post("/create-user", (req, res) => {
-  //get user from req
-  let newUser = req.body;
- 
-  // check user already existed with username of newUser
-  //if user existed, send responce to client as "user existed"
-  //if user not existed, then push to users array
-  //send res
-});
-
-
-
-
-
-
-
-
-
-//route for PUT req
-app.put("/modify-user", (req, res) => {
-  res.send({ message: "User modified" });
-});
-
-//route for DELETE req
-app.delete("/delete-user", (req, res) => {
-  res.send({ message: "User deleted" });
-});
+//handle errors
+app.use((err,req,res,next)=>{
+  res.send({message:"Error occurred",error:err.message})
+})
