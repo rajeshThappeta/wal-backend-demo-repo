@@ -20,7 +20,7 @@ userApp.use(exp.json());
 userApp.get("/users", getAllUsers);
 
 //route to get user by email
-userApp.get("/user/:email", getUserByEmail);
+userApp.get("/user/:name", getUserByEmail);
 
 //route for POST req
 userApp.post("/create-user", createNewUser);

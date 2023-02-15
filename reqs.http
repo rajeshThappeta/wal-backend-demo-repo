@@ -2,7 +2,7 @@ GET http://localhost:4000/user-api/users
 
 ###
 
-GET http://localhost:4000/user-api/user/kiran@mail.com
+GET http://localhost:4000/user-api/user/test2
 
 ###
 
@@ -10,9 +10,10 @@ POST http://localhost:4000/user-api/create-user
 Content-Type: application/json
 
 {
-     "username":"bhanu",
-     "email":"bhanu@mail.com",
-     "age":21
+   "name":"test2",
+   "dob":"2023-10-10",
+   "designation":"manager",
+   "gender":"m"
 }
 
 
@@ -21,9 +22,10 @@ PUT http://localhost:4000/user-api/modify-user
 Content-Type: application/json
 
 {
-     "username":"kirabbabu",
-     "email":"abcd@mail.com",
-     "age":25
+   "name":"test2",
+   "dob":"2023-10-10",
+   "designation":"manager",
+   "gender":"m"
 }
 
 
@@ -36,3 +38,12 @@ GET http://localhost:4000/abcd
 
 ###
 GET http://localhost:4000/product-api/products
+
+###
+GET http://localhost:4000/project-assignment-api/projectId/200
+
+###
+GET http://localhost:4000/project-assignment-api/empId/3
+
+###
+GET http://localhost:4000/project-assignment-api/emps-on-bench

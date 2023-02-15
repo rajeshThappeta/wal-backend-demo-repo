@@ -9,6 +9,9 @@
   "author": "rajesh",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mysql2": "^3.1.2"
   }
 }
